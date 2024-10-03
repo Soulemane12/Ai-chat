@@ -1,0 +1,47 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personalized Study Tool Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Welcome to Your Personalized Study Experience</h1>
+  <form id="userTest">
+    <!-- Question 1 -->
+    <div class="question">
+      <p>1. What is your preferred learning style?</p>
+      <label><input type="radio" name="learningStyle" value="Visual" required> Visual</label><br>
+      <label><input type="radio" name="learningStyle" value="Auditory"> Auditory</label><br>
+      <label><input type="radio" name="learningStyle" value="Kinesthetic"> Kinesthetic</label>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+      <p>2. Which subjects are you interested in?</p>
+      <label><input type="checkbox" name="subjects" value="Math"> Math</label><br>
+      <label><input type="checkbox" name="subjects" value="Science"> Science</label><br>
+      <label><input type="checkbox" name="subjects" value="History"> History</label><br>
+      <label><input type="checkbox" name="subjects" value="Literature"> Literature</label>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+      <p>3. How much time can you dedicate to studying each day?</p>
+      <select name="studyTime" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="30">30 minutes</option>
+        <option value="60">1 hour</option>
+        <option value="90">1.5 hours</option>
+        <option value="120">2 hours</option>
+      </select>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
