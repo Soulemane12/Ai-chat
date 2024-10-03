@@ -1,47 +1,141 @@
-<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personalized Study Tool Test</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Welcome to Your Personalized Study Experience</h1>
   <form id="userTest">
+    
     <!-- Question 1 -->
     <div class="question">
-      <p>1. What is your preferred learning style?</p>
-      <label><input type="radio" name="learningStyle" value="Visual" required> Visual</label><br>
-      <label><input type="radio" name="learningStyle" value="Auditory"> Auditory</label><br>
-      <label><input type="radio" name="learningStyle" value="Kinesthetic"> Kinesthetic</label>
+      <p>1. When learning new information, what do you prefer?</p>
+      <label><input type="checkbox" name="learningStyle" value="Visual"> a) Watching a video or looking at pictures (Visual)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Auditory"> b) Listening to a podcast (Auditory)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Musical"> c) Using musical rhythms or songs to remember (Musical)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) Retyping or writing notes (Reading/Writing)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Engaging in a hands-on activity (Kinesthetic)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Social"> f) Discussing it with others (Social)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Imagery"> g) Creating mental images to help recall the information (Imagery)</label><br>
     </div>
 
     <!-- Question 2 -->
     <div class="question">
-      <p>2. Which subjects are you interested in?</p>
-      <label><input type="checkbox" name="subjects" value="Math"> Math</label><br>
-      <label><input type="checkbox" name="subjects" value="Science"> Science</label><br>
-      <label><input type="checkbox" name="subjects" value="History"> History</label><br>
-      <label><input type="checkbox" name="subjects" value="Literature"> Literature</label>
+      <p>2. If you were learning how to bake a cake, what would help you most?</p>
+      <label><input type="checkbox" name="learningStyle" value="Visual"> a) Watching a video tutorial (Visual)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Auditory"> b) Listening to an instructional podcast (Auditory)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Musical"> c) Remembering through a song or rhyme about the steps (Musical)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) Reading or retyping the recipe (Reading/Writing)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Trying to bake it step by step (Kinesthetic)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Social"> f) Talking through the process with a friend (Social)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Imagery"> g) Visualizing the steps in your head before starting (Imagery)</label><br>
     </div>
 
     <!-- Question 3 -->
     <div class="question">
-      <p>3. How much time can you dedicate to studying each day?</p>
-      <select name="studyTime" required>
-        <option value="" disabled selected>Select an option</option>
-        <option value="30">30 minutes</option>
-        <option value="60">1 hour</option>
-        <option value="90">1.5 hours</option>
-        <option value="120">2 hours</option>
-      </select>
+      <p>3. How do you prefer to study for an exam?</p>
+      <label><input type="checkbox" name="learningStyle" value="Visual"> a) Looking at diagrams, pictures, or charts (Visual)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Auditory"> b) Listening to a podcast or recorded lecture (Auditory)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Musical"> c) Using songs or beats to help memorize facts (Musical)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) Writing and retyping notes (Reading/Writing)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Using flashcards or doing practice tests (Kinesthetic)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Social"> f) Studying with a group or discussing with friends (Social)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Imagery"> g) Creating mental images of the material (Imagery)</label><br>
     </div>
 
-    <!-- Submit Button -->
-    <button type="submit">Submit</button>
-  </form>
+    <!-- Question 4 -->
+    <div class="question">
+      <p>4. What type of content do you find most engaging?</p>
+      <label><input type="checkbox" name="learningStyle" value="Visual"> a) Images, charts, and videos (Visual)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Auditory"> b) Podcasts or audio content (Auditory)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Musical"> c) Learning with musical elements like songs or melodies (Musical)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) Reading books, articles, or retyping information (Reading/Writing)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Interactive, hands-on experiences (Kinesthetic)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Social"> f) Group discussions or collaborative work (Social)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Imagery"> g) Creating vivid mental images to understand the content (Imagery)</label><br>
+    </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+    <!-- Question 5 -->
+    <div class="question">
+      <p>5. When you need to recall something, how do you typically remember it?</p>
+      <label><input type="checkbox" name="learningStyle" value="Visual"> a) As a picture or diagram (Visual)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Auditory"> b) As something you heard in a podcast or lecture (Auditory)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Musical"> c) Through a song or rhythm (Musical)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) By remembering what you wrote down (Reading/Writing)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Through actions or physical activities you performed (Kinesthetic)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Social"> f) By recalling a conversation you had with others (Social)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Imagery"> g) By visualizing mental images (Imagery)</label><br>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+      <p>6. How do you approach learning a new skill, like riding a bike or cooking a new recipe?</p>
+      <label><input type="checkbox" name="learningStyle" value="Visual"> a) Watching someone else do it first (Visual)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Auditory"> b) Listening to step-by-step instructions (Auditory)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Musical"> c) Using a song or jingle to remember steps (Musical)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) Reading instructions or retyping them for clarity (Reading/Writing)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Trying it out yourself right away (Kinesthetic)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Social"> f) Having someone guide you through it as you learn together (Social)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Imagery"> g) Imagining the process and visualizing each step (Imagery)</label><br>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+      <p>7. If you have to memorize a list of items, what strategy works best for you?</p>
+      <label><input type="checkbox" name="learningStyle" value="Imagery"> a) Visualizing the list as images in your mind (Imagery)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Auditory"> b) Listening to a podcast or making an audio recording (Auditory)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Musical"> c) Creating a song or rhythm to remember the items (Musical)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) Writing or retyping the list multiple times (Reading/Writing)</label><br>
+      <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Organizing and manipulating physical objects related to the list (Kinesthetic)</
+        <label><input type="checkbox" name="learningStyle" value="Social"> f) Reviewing the list with a friend or group (Social)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Visual"> g) Looking at images or diagrams that represent each item (Visual)</label><br>
+      </div>
+  
+      <!-- Question 8 -->
+      <div class="question">
+        <p>8. When you’re stuck on a difficult problem, what helps you the most?</p>
+        <label><input type="checkbox" name="learningStyle" value="Visual"> a) Drawing it out or looking for visual representations (Visual)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Auditory"> b) Listening to a podcast or getting verbal advice (Auditory)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Musical"> c) Using a song or beat to help remember concepts (Musical)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) Writing it down or retyping it to clarify (Reading/Writing)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Working through it hands-on to understand (Kinesthetic)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Social"> f) Talking it over with someone else (Social)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Imagery"> g) Visualizing the problem in your mind (Imagery)</label><br>
+      </div>
+  
+      <!-- Question 9 -->
+      <div class="question">
+        <p>9. What kind of environment do you prefer when learning something new?</p>
+        <label><input type="checkbox" name="learningStyle" value="Visual"> a) Watching visual aids like slideshows or videos (Visual)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Auditory"> b) Listening to instructions, lectures, or podcasts (Auditory)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Musical"> c) Having background music or creating musical connections (Musical)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) Reading materials or taking notes (Reading/Writing)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Doing activities or practicing the skill (Kinesthetic)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Social"> f) Learning with a group or a partner (Social)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Imagery"> g) Imagining the process or visualizing concepts as you go (Imagery)</label><br>
+      </div>
+  
+      <!-- Question 10 -->
+      <div class="question">
+        <p>10. How do you feel most comfortable presenting information to others?</p>
+        <label><input type="checkbox" name="learningStyle" value="Visual"> a) Using slideshows, images, or diagrams (Visual)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Auditory"> b) Giving a spoken presentation or audio recording (Auditory)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Musical"> c) Incorporating music, jingles, or sound effects (Musical)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Reading/Writing"> d) Writing a report or creating detailed handouts (Reading/Writing)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Kinesthetic"> e) Demonstrating the process with physical objects or tools (Kinesthetic)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Social"> f) Presenting as part of a group discussion or team (Social)</label><br>
+        <label><input type="checkbox" name="learningStyle" value="Imagery"> g) Guiding the audience to visualize what you're explaining (Imagery)</label><br>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  
+    <script src="script.js"></script>
+  </body>
+  </html>
+  
