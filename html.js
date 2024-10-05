@@ -79,6 +79,19 @@ function updateAnswerCount(questionElement) {
     });
 }
 
+function  findQuizResults(){
+    let highestint =0;
+    let TypeOfLearning=0;
+   for(let i=1;i< Object.keys(answerCounts).length;i++){
+      highestint = answerCounts[Object.keys(answerCounts)[0]];
+     if(answerCounts[Object.keys(answerCounts)[i]]>highestint){
+        highestint = answerCounts[Object.keys(answerCounts)[i]];
+        TypeOfLearning = i;
+     }
+     
+   }
+   return Object.keys(answerCounts)[TypeOfLearning];
+}
 function submitQuiz() {
     // Hide all questions
     const currentQuestionElement = document.getElementById(`question${currentQuestion}`);
@@ -103,11 +116,38 @@ function submitQuiz() {
         <p>Kinesthetic: ${answerCounts.Kinesthetic}</p>
         <p>Social: ${answerCounts.Social}</p>
         <p>Imagery: ${answerCounts.Imagery}</p>
+        <h2>${findQuizResults()}: is your prefered learning style </h2>
+       
+
     `;
+
+    // Add the "Continue to Home" button
+    const homeButton = document.createElement('button');
+    homeButton.textContent = "Continue to Home";
+    homeButton.onclick = function() {
+        window.location.href = "home.html";  // Redirect to home.html
+    };
+
+    // Append the result and home button to the body
     document.body.appendChild(resultDiv);
+    document.body.appendChild(homeButton);
 }
 
 // Show the first question when the page loads
 document.addEventListener("DOMContentLoaded", function() {
     showQuestion(1);  // Show the first question when the page loads
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Select all links in the navigation
+    const links = document.querySelectorAll(".header-center nav ul li a");
+  
+    // Loop through each link and add the 'active' class to the correct link
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  

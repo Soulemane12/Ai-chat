@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert Notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script src="html.js" defer></script> <!-- Load JS file after HTML content -->
+  
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <h1>AdaptStudy.ai</h1>
+      </div>
+      <div class="header-center">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="convert-notes.html" class="active">Convert Notes</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Input Notes Section -->
+      <section class="note-input">
+        <h2>Input Notes</h2>
+        <textarea id="notes-textarea" placeholder="Type your notes here..." rows="10" cols="50"></textarea>
+      </section>
+
+      <!-- Pick your Style Section -->
+      <section class="style-selection">
+        <h4>Pick Your Learning Style:</h4>
+        
+        <!-- Style Buttons -->
+        <div class="style-buttons">
+          <button class="style-button" id="kinesthetic">Kinesthetic</button>
+          <button class="style-button" id="logical">Logical</button>
+          <button class="style-button" id="auditory">Auditory</button>
+          <button class="style-button" id="visual">Visual</button>
+          <button class="style-button" id="social">Social</button>
+          <button class="style-button" id="Reading/Writing">Reading/Writing</button>
+          <button class="style-button" id="Imagery">Imagery</button>
+          <button class="style-button" id="Musical">Musical</button>
+        </div>
+      </section>
+
+      <!-- Pick Type Section -->
+      <section class="style-selection">
+        <h4>Pick Type:</h4>
+        
+        <!-- Type Buttons -->
+        <div class="style-buttons">
+          <button class="type-button" id="Quiz">Quiz</button>
+          <button class="type-button" id="Study Guide">Study Guide</button>
+          <button class="type-button" id="Flashcards">Flashcards</button>
+          <button class="type-button" id="Notes">Notes</button>
+        </div>
+      </section>
+
+      <section class="style-Generate-selection">
+        <button class="style-Generate-button" id="generate-btn" disabled>Generate</button>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Get references to elements
+    const textarea = document.getElementById('notes-textarea');
+    const styleButtons = document.querySelectorAll('.style-button');
+    const typeButtons = document.querySelectorAll('.type-button');
+    const generateButton = document.getElementById('generate-btn');
+
+    // Function to enable/disable the Generate button
+    function checkConditions() {
+      const isTextareaFilled = textarea.value.trim() !== "";
+      const isStyleSelected = Array.from(styleButtons).some(button => button.classList.contains('active'));
+      const isTypeSelected = Array.from(typeButtons).some(button => button.classList.contains('active'));
+
+      // If all conditions are met, activate the generate button
+      if (isTextareaFilled && isStyleSelected && isTypeSelected) {
+        generateButton.disabled = false;
+        generateButton.classList.add('active'); // Add the 'active' class to turn blue
+      } else {
+        generateButton.disabled = true;
+        generateButton.classList.remove('active'); // Remove the 'active' class to return to default
+      }
+    }
+
+    // Event listener for textarea input
+    textarea.addEventListener('input', checkConditions);
+
+    // Event listeners for style buttons
+    styleButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        button.classList.toggle('active');
+        checkConditions();
+      });
+    });
+
+    // Event listeners for type buttons
+    typeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        button.classList.toggle('active');
+        checkConditions();
+      });
+    });
+
+    // Initial check when the page loads
+    checkConditions();
+  </script>
+</body>
+</html>
