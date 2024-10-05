@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css">
   <script src="html.js" defer></script> <!-- Load JS file after HTML content -->
-  
 </head>
 <body>
   <div class="container">
@@ -61,57 +60,12 @@
           <button class="type-button" id="Notes">Notes</button>
         </div>
       </section>
-
       <section class="style-Generate-selection">
-        <button class="style-Generate-button" id="generate-btn" disabled>Generate</button>
+        <button class="style-Generate-button" id="generate-btn" disabled onclick="redirectToPage()">Generate</button>
       </section>
     </main>
   </div>
 
-  <script>
-    // Get references to elements
-    const textarea = document.getElementById('notes-textarea');
-    const styleButtons = document.querySelectorAll('.style-button');
-    const typeButtons = document.querySelectorAll('.type-button');
-    const generateButton = document.getElementById('generate-btn');
-
-    // Function to enable/disable the Generate button
-    function checkConditions() {
-      const isTextareaFilled = textarea.value.trim() !== "";
-      const isStyleSelected = Array.from(styleButtons).some(button => button.classList.contains('active'));
-      const isTypeSelected = Array.from(typeButtons).some(button => button.classList.contains('active'));
-
-      // If all conditions are met, activate the generate button
-      if (isTextareaFilled && isStyleSelected && isTypeSelected) {
-        generateButton.disabled = false;
-        generateButton.classList.add('active'); // Add the 'active' class to turn blue
-      } else {
-        generateButton.disabled = true;
-        generateButton.classList.remove('active'); // Remove the 'active' class to return to default
-      }
-    }
-
-    // Event listener for textarea input
-    textarea.addEventListener('input', checkConditions);
-
-    // Event listeners for style buttons
-    styleButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        button.classList.toggle('active');
-        checkConditions();
-      });
-    });
-
-    // Event listeners for type buttons
-    typeButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        button.classList.toggle('active');
-        checkConditions();
-      });
-    });
-
-    // Initial check when the page loads
-    checkConditions();
-  </script>
+  
 </body>
 </html>

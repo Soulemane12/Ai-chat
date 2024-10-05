@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Results</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1, h2, h3, h4 {
+      color: #333;
+    }
+
+    .result-section {
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #5c6bc0;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #3f4f80;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Learning Style and Notes Summary</h1>
+
+    <!-- Result Section: Style and Type -->
+    <div class="result-section">
+      <h2>Your Preferred Learning Style</h2>
+      <p id="style-result">Loading...</p>
+
+      <h3>Your Selected Type</h3>
+      <p id="type-result">Loading...</p>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="result-section">
+      <h4>Your Notes</h4>
+      <p id="notes-result">Loading...</p>
+    </div>
+
+    <!-- Button to go back to home page -->
+    <a href="home.html" class="btn">Return to Home</a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Retrieve the selected style, type, and notes from localStorage
+      const selectedStyle = localStorage.getItem('selectedStyle');
+      const selectedType = localStorage.getItem('selectedType');
+      const notesText = localStorage.getItem('notesText');
+
+      // Display the selected style, type, and notes in the page
+      document.getElementById('style-result').textContent = selectedStyle ? selectedStyle : 'Not selected';
+      document.getElementById('type-result').textContent = selectedType ? selectedType : 'Not selected';
+      document.getElementById('notes-result').textContent = notesText ? notesText : 'No notes provided.';
+    });
+  </script>
+</body>
+</html>
